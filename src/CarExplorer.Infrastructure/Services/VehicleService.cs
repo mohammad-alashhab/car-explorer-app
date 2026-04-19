@@ -19,5 +19,13 @@ namespace CarExplorer.Infrastructure.Services
             var response = await _http.GetFromJsonAsync<ApiResponse>("getallmakes?format=json");
             return response?.Results ?? new List<MakeDto>();
         }
+
+        public async Task<List<VehicleTypeDto>> GetVehicleTypesByMakeIdAsync(int makeId)
+        {
+            var response = await _http.GetFromJsonAsync<VehicleTypeResponse>(
+                $"GetVehicleTypesForMakeId/{makeId}?format=json");
+
+            return response?.Results ?? new List<VehicleTypeDto>();
+        }
     }
 }

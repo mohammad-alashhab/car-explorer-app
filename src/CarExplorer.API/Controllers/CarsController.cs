@@ -20,5 +20,12 @@ namespace CarExplorer.API.Controllers
             var data = await _service.GetMakesAsync();
             return Ok(data);
         }
+
+        [HttpGet("types/{makeId}")]
+        public async Task<IActionResult> GetVehicleTypes(int makeId)
+        {
+            var data = await _service.GetVehicleTypesByMakeIdAsync(makeId);
+            return Ok(data);
+        }
     }
 }
