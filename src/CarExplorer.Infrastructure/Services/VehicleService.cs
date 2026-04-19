@@ -27,5 +27,13 @@ namespace CarExplorer.Infrastructure.Services
 
             return response?.Results ?? new List<VehicleTypeDto>();
         }
+
+        public async Task<List<ModelDto>> GetModelsAsync(int makeId, int year)
+        {
+            var response = await _http.GetFromJsonAsync<ModelResponse>(
+                $"GetModelsForMakeIdYear/makeId/{makeId}/modelyear/{year}?format=json");
+
+            return response?.Results ?? new List<ModelDto>();
+        }
     }
 }

@@ -24,7 +24,20 @@ namespace CarExplorer.API.Controllers
         [HttpGet("types/{makeId}")]
         public async Task<IActionResult> GetVehicleTypes(int makeId)
         {
+            if (makeId <= 0)
+                return BadRequest("Invalid Make Id");
+
             var data = await _service.GetVehicleTypesByMakeIdAsync(makeId);
+            return Ok(data);
+        }
+
+        [HttpGet("models")]
+        public async Task<IActionResult> GetModels(int makeId, int year)
+        {
+            if (makeId <= 0 || year <= 0)
+                return BadRequest("Invalid input");
+
+            var data = await _service.GetModelsAsync(makeId, year);
             return Ok(data);
         }
     }
