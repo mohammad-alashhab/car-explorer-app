@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using CarExplorer.Application.Interfaces;
+using CarExplorer.Infrastructure.Services;
 
 namespace CarExplorer.Infrastructure.DependencyInjection
 {
@@ -9,6 +11,11 @@ namespace CarExplorer.Infrastructure.DependencyInjection
             // HttpClient
             // External APIs
             // Services implementation
+
+            services.AddHttpClient<IVehicleService, VehicleService>(client =>
+            {
+                client.BaseAddress = new Uri("https://vpic.nhtsa.dot.gov/api/vehicles/");
+            });
 
             return services;
         }
