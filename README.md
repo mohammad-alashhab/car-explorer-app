@@ -27,12 +27,12 @@ Built with a focus on **Clean Architecture**, scalability, and production-ready 
 
 ### 🏠 Home Page
 <p align="center">
-  <img src="assets/images/image_1.png" width="900"/>
+  <img src="frontend/src/assets/images/image_1.png" width="900"/>
 </p>
 
 ### 🚗 Vehicle Selection & Results
 <p align="center">
-  <img src="assets/images/image_2.png" width="900"/>
+  <img src="frontend/src/assets/images/image_2.png" width="900"/>
 </p>
 
 ---
