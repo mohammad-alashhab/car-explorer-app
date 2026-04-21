@@ -16,6 +16,11 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowFrontend", policy =>
     {
         policy
+        //for development, allow localhost. For production, specify the actual frontend URL.
+            /*.WithOrigins(
+                "http://localhost:3000",
+                "http://localhost:5173"
+            )*/
             .WithOrigins("http://16.171.197.206")
             .AllowAnyHeader()
             .AllowAnyMethod();

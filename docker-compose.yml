@@ -12,8 +12,11 @@ services:
     build:
       context: ./frontend
       args:
+        # for development, allow localhost. For production, specify the actual frontend URL.
+        # VITE_API_BASE_URL=http://localhost:5000/api
         - VITE_API_BASE_URL=http://16.171.197.206:5000/api
     ports:
+      # for local make port 3000:80
       - "80:80"
     depends_on:
       - backend
