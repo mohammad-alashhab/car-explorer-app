@@ -2,7 +2,7 @@
 
 namespace CarExplorer.Infrastructure.External
 {
-    public class ApiResponse
+    public class MakeResponse
     {
         public List<MakeDto> Results { get; set; }
     }

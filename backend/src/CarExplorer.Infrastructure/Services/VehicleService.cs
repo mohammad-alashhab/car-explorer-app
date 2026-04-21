@@ -16,7 +16,7 @@ namespace CarExplorer.Infrastructure.Services
 
         public async Task<List<MakeDto>> GetMakesAsync()
         {
-            var response = await _http.GetFromJsonAsync<ApiResponse>("getallmakes?format=json");
+            var response = await _http.GetFromJsonAsync<MakeResponse>("getallmakes?format=json");
             return response?.Results ?? new List<MakeDto>();
         }
 
