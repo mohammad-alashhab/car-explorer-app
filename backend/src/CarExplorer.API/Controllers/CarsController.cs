@@ -32,12 +32,12 @@ namespace CarExplorer.API.Controllers
         }
 
         [HttpGet("models")]
-        public async Task<IActionResult> GetModels(int makeId, int year)
+        public async Task<IActionResult> GetModels(int makeId, int year, string? type)
         {
             if (makeId <= 0 || year <= 0)
                 return BadRequest("Invalid input");
 
-            var data = await _service.GetModelsAsync(makeId, year);
+            var data = await _service.GetModelsAsync(makeId, year, type);
             return Ok(data);
         }
     }
