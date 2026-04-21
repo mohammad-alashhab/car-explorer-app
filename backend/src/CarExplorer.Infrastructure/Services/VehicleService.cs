@@ -28,10 +28,16 @@ namespace CarExplorer.Infrastructure.Services
             return response?.Results ?? new List<VehicleTypeDto>();
         }
 
-        public async Task<List<ModelDto>> GetModelsAsync(int makeId, int year)
+        public async Task<List<ModelDto>> GetModelsAsync(int makeId, int year, string? type)
         {
-            var response = await _http.GetFromJsonAsync<ModelResponse>(
-                $"GetModelsForMakeIdYear/makeId/{makeId}/modelyear/{year}?format=json");
+            var url = $"GetModelsForMakeIdYear/makeId/{makeId}/modelyear/{year}";
+            if (!string.IsNullOrEmpty(type))
+            {
+                url += $"/vehicleType/{type}";
+            }
+            url += "?format=json";
+
+            var response = await _http.GetFromJsonAsync<ModelResponse>(url);
 
             return response?.Results ?? new List<ModelDto>();
         }

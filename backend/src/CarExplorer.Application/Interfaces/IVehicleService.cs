@@ -6,6 +6,6 @@ namespace CarExplorer.Application.Interfaces
     {
         Task<List<MakeDto>> GetMakesAsync();
         Task<List<VehicleTypeDto>> GetVehicleTypesByMakeIdAsync(int makeId);
-        Task<List<ModelDto>> GetModelsAsync(int makeId, int year);
+        Task<List<ModelDto>> GetModelsAsync(int makeId, int year, string? type);
     }
 }
