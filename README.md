@@ -23,6 +23,20 @@ Built with a focus on **Clean Architecture**, scalability, and production-ready 
 
 ---
 
+## 📸 Screenshots
+
+### 🏠 Home Page
+<p align="center">
+  <img src="assets/images/image_1.png" width="900"/>
+</p>
+
+### 🚗 Vehicle Selection & Results
+<p align="center">
+  <img src="assets/images/image_2.png" width="900"/>
+</p>
+
+---
+
 ## 🏗️ Architecture
 
 The backend follows **Clean Architecture principles**:
